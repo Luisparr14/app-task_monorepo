@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "npm run start --workspace=Api-Task",
-    "build": "SKIP_PREFLIGHT_CHECK=true npm run build --workspace=tasks",
+    "build": "SKIP_PREFLIGHT_CHECK=true npm install && npm run build --workspace=tasks",
     "test": "NODE_ENV=test jest --verbose --silent --detectOpenHandles",
     "test:nosilent": "NODE_ENV=test jest --verbose --detectOpenHandles",
     "test:watch": "npm run test -- --watch",
