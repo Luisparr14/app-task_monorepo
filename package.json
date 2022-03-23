@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "npm run start --workspace=Api-Task",
-    "build": "SKIP_PREFLIGHT_CHECK=true npm install && npm run build --workspace=tasks",
+    "build": "SKIP_PREFLIGHT_CHECK=true npm run build --workspace=tasks",
     "test": "NODE_ENV=test jest --verbose --silent --detectOpenHandles",
     "test:nosilent": "NODE_ENV=test jest --verbose --detectOpenHandles",
     "test:watch": "npm run test -- --watch",
@@ -24,7 +24,8 @@
   "author": "Luis Angel Parra Meza",
   "license": "ISC",
   "dependencies": {
-    "axios": "0.26.1"
+    "axios": "0.26.1",
+    "standard": "^16.0.4"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
