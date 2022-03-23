@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 import './style/Forms.css'
 import { validateEmail, validField } from '../helpers/valid'
 
-export default function LoginForm({ onSubmit, onChange, form, sendForm }) {  
-  
+export default function LoginForm ({ onSubmit, onChange, form, sendForm }) {
   return (
     <Stack
       component={'form'}
@@ -17,7 +16,7 @@ export default function LoginForm({ onSubmit, onChange, form, sendForm }) {
         '& .MuiButton-root': { m: 1, width: '20ch', alignSelf: 'center' },
         backgroundColor: '#f5f5f5',
         alignSelf: 'center',
-        p: '20px',
+        p: '20px'
       }}
     >
 

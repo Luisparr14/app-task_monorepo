@@ -1,6 +1,6 @@
 import { Button, Stack, TextField } from '@mui/material'
 import React from 'react'
-import { validField, validateEmail} from '../helpers/valid'
+import { validField, validateEmail } from '../helpers/valid'
 import './style/Forms.css'
 const RegisterForm = ({ onSubmit, onChange, form, sendForm }) => (
   <Stack
@@ -13,11 +13,11 @@ const RegisterForm = ({ onSubmit, onChange, form, sendForm }) => (
       '& .MuiButton-root': { m: 1, width: '20ch', alignSelf: 'center' },
       backgroundColor: '#f5f5f5',
       alignSelf: 'center',
-      p: '20px',
+      p: '20px'
     }}
   >
 
-    <TextField    
+    <TextField
       id="name"
       error={validField(form.name).error && sendForm}
       helperText={sendForm && validField(form.name).message}

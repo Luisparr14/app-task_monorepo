@@ -1,4 +1,4 @@
-import url from '../pages/config'
+import url from '../config/config'
 import Tasks from '../pages/Tasks'
 import Register from '../pages/Register'
 import React, { useEffect, useState } from 'react'
@@ -8,8 +8,7 @@ import { CssBaseline } from '@mui/material'
 import axios from 'axios'
 import AddTask from '../pages/AddTask'
 import { validateEmail, validField } from '../helpers/valid'
-import { Redirect } from 'react-router-dom'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Redirect, BrowserRouter, Route, Switch } from 'react-router-dom'
 import AlertComponent from './AlertComponent'
 const App = () => {
   const [sessionActive, setSessionActive] = useState(false)
@@ -26,14 +25,14 @@ const App = () => {
       return
     }
     try {
-      let config = {
+      const config = {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
         }
       }
-      let info = await axios.post(`${url}/auth/login`, form, config);
+      const info = await axios.post(`${url}/auth/login`, form, config)
       const { data, success } = info.data
       if (success) {
         localStorage.setItem('token', JSON.stringify(data))

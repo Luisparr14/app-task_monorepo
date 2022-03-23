@@ -1,8 +1,9 @@
+import React from 'react'
 import { Container, Button, Stack, TextField } from '@mui/material'
 import { validField } from '../helpers/valid'
 import './style/Forms.css'
 
-const FormAddTask = ({ onChange, onSubmit,form, sendForm }) => {
+const FormAddTask = ({ onChange, onSubmit, form, sendForm }) => {
   return (
     <Stack
       component={'form'}
@@ -19,7 +20,7 @@ const FormAddTask = ({ onChange, onSubmit,form, sendForm }) => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '100%',
+        width: '100%'
       }}>
       <Container
         component={'div'}
@@ -30,7 +31,7 @@ const FormAddTask = ({ onChange, onSubmit,form, sendForm }) => {
             md: 'row'
           },
           alignItems: 'flex-start',
-          justifyContent: 'center',
+          justifyContent: 'center'
 
         }}
       >
@@ -46,7 +47,7 @@ const FormAddTask = ({ onChange, onSubmit,form, sendForm }) => {
           type="text"
           size="small"
         />
-        <TextField          
+        <TextField
           id="description"
           label="Description"
           name='description'
@@ -91,7 +92,7 @@ const FormAddTask = ({ onChange, onSubmit,form, sendForm }) => {
         sx={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'center'
         }}
       >
         <Button

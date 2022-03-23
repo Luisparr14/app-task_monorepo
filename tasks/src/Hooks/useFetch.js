@@ -1,29 +1,28 @@
 import { useState, useEffect } from 'react'
-
+import axios from 'axios'
 const useFetch = (url, token = '') => {
-    const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState([])
 
-    useEffect(() => {
-        const fetchResource = async () => {
-            const config = {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
-            }
-            try {
-                let res = await fetch(url, config)
-                let data = await res.json()
-                setTasks(data.data)
-            } catch (error) {
-                console.log(error);
-            }
+  useEffect(() => {
+    const fetchResource = async () => {
+      const config = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${token}`
         }
-        fetchResource()
-    }, [url, token])
+      }
+      try {
+        const res = await axios.get(url, config)
+        setTasks(res.data.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchResource()
+  }, [url, token])
 
-    return { tasks }
+  return { tasks }
 }
 export default useFetch

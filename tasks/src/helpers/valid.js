@@ -14,7 +14,7 @@ export const validateEmail = (email) => {
   return { error, message }
 }
 
-export const  validField = (value) => {
+export const validField = (value) => {
   let message = ''
   let error = false
   if (value.length === 0) {

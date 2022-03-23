@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import RegisterForm from '../components/RegisterForm'
-import url from './config'
+import url from '../config/config'
 import axios from 'axios'
 import { Container } from '@mui/material'
 import { validField } from '../helpers/valid'
@@ -19,20 +19,19 @@ const SingUp = () => {
       ...form,
       [e.target.name]: e.target.value
     })
-
   }
 
   const handleSubmit = async e => {
     setSendForm(true)
-    e.preventDefault();
+    e.preventDefault()
     if (validField(form.name).error || validField(form.email).error || validField(form.password).error || validField(form.confirmPassword).error) {
       return
     }
     try {
-      let config = {
+      const config = {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
           'Content-Type': 'application/json'
         }
       }
@@ -54,21 +53,19 @@ const SingUp = () => {
   }
 
   return (
-    <React.Fragment>
-      <Container sx={{
-        display: 'flex',
-        minHeight: 'calc(100vh - 64px)',
-        justifyContent: 'center'
-      }}>
+    <Container sx={{
+      display: 'flex',
+      minHeight: 'calc(100vh - 64px)',
+      justifyContent: 'center'
+    }}>
       {error && <AlertComponent error={error} errorMessage={errorMessage} />}
-        <RegisterForm
-          sendForm={sendForm}
-          onSubmit={handleSubmit}
-          onChange={handleChange}
-          form={form}
-        />
-      </Container>
-    </React.Fragment >
+      <RegisterForm
+        sendForm={sendForm}
+        onSubmit={handleSubmit}
+        onChange={handleChange}
+        form={form}
+      />
+    </Container>
   )
 }
 

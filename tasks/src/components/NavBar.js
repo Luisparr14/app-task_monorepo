@@ -1,40 +1,40 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import MenuItem from '@mui/material/MenuItem';
-import { Link } from 'react-router-dom';
-import './style/NavBar.css';
+import * as React from 'react'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import Menu from '@mui/material/Menu'
+import MenuIcon from '@mui/icons-material/Menu'
+import Container from '@mui/material/Container'
+import MenuItem from '@mui/material/MenuItem'
+import { Link } from 'react-router-dom'
+import './style/NavBar.css'
 
 const paginas = [
   {
     name: 'Tasks',
-    path: '/tasks',
+    path: '/tasks'
   },
   {
     name: 'Add Task',
-    path: '/add/task',
+    path: '/add/task'
   }
 ]
 
 const NavBar = ({ sessionActive = false, logOut }) => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null)
 
-  let settings = sessionActive ? ['Logout'] : ['Login'];
-  let pages = sessionActive ? paginas : [];
+  const settings = sessionActive ? ['Logout'] : ['Login']
+  const pages = sessionActive ? paginas : []
 
   const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
+    setAnchorElNav(event.currentTarget)
+  }
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+    setAnchorElNav(null)
+  }
 
   return (
     <AppBar position="static" sx={{
@@ -68,23 +68,23 @@ const NavBar = ({ sessionActive = false, logOut }) => {
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left',
+                horizontal: 'left'
               }}
               keepMounted
               transformOrigin={{
                 vertical: 'top',
-                horizontal: 'left',
+                horizontal: 'left'
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: 'block', md: 'none' }
               }}
             >
               {pages.map((page) => (
                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
                   <Link to={page.path}>
-                    <Typography sx={{ color: "#000" }} textAlign="left">{page.name}</Typography>
+                    <Typography sx={{ color: '#000' }} textAlign="left">{page.name}</Typography>
                   </Link>
                 </MenuItem>
               ))}
@@ -119,12 +119,12 @@ const NavBar = ({ sessionActive = false, logOut }) => {
               <Typography textAlign="left">{settings[0]}</Typography>
             </MenuItem>}
           {!sessionActive &&
-            <Link to={`/login`} style={{ textDecoration: 'none', height: '100%' }}>
+            <Link to={'/login'} style={{ textDecoration: 'none', height: '100%' }}>
               <Typography sx={{ mr: 2, display: { xs: 'flex', md: 'flex' }, color: '#fff' }} textAlign="left">{settings[0]}</Typography>
             </Link>}
         </Toolbar>
       </Container>
     </AppBar>
-  );
-};
-export default NavBar;
+  )
+}
+export default NavBar

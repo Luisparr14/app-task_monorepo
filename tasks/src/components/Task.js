@@ -1,8 +1,8 @@
 import React from 'react'
 import './style/Task.css'
 import { Card, CardContent, Typography, CardActions, IconButton } from '@mui/material'
-import Check from '@mui/icons-material/CheckCircleOutline';
-const Task = ({id, title, description, leftColor, rightColor, showButton = true }) => (
+import Check from '@mui/icons-material/CheckCircleOutline'
+const Task = ({ id, title, description, leftColor, rightColor, showButton = true }) => (
   <Card className='card Task' sx={{
     width: '90%',
     display: 'flex',
@@ -11,22 +11,22 @@ const Task = ({id, title, description, leftColor, rightColor, showButton = true 
     margin: 'auto',
     marginTop: '5px',
     marginBottom: '5px',
-    background: `url(${process.env.PUBLIC_URL}/images/circles.png), linear-gradient(to right, ${leftColor || "#456"}, ${rightColor || "#406"}), no-repeat`,
+    background: `url(${process.env.PUBLIC_URL}/images/circles.png), linear-gradient(to right, ${leftColor || '#456'}, ${rightColor || '#406'}), no-repeat`,
     backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
+    backgroundRepeat: 'no-repeat'
   }}
     variant="outlined"
   >
     <CardContent>
-      <Typography sx={{ 
+      <Typography sx={{
         fontSize: 30,
-        textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;', 
-       }} color="white">
+        textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;'
+      }} color="white">
         {title}
       </Typography>
       <Typography variant="p" color="white" sx={{
         fontSize: 20,
-        textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;', 
+        textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;'
       }}>
         {description}
       </Typography>
@@ -45,7 +45,7 @@ const Task = ({id, title, description, leftColor, rightColor, showButton = true 
       sx={{
         color: 'white',
         marginLeft: '4px',
-        "&:hover": {
+        '&:hover': {
           backgroundColor: '#ccc',
           color: '#000',
           transform: 'scale(1.1)',
