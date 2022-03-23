@@ -1,0 +1,27 @@
+{
+  "name": "task-app",
+  "version": "1.0.0",
+  "description": "",
+  "workspaces":[
+    "Api-Task",
+    "tasks"
+  ],
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test jest --verbose --silent --detectOpenHandles",
+    "test:nosilent": "NODE_ENV=test jest --verbose --detectOpenHandles",
+    "test:watch": "npm run test -- --watch",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "Luis Angel Parra Meza",
+  "license": "ISC",
+  "dependencies":{
+    "axios": "0.26.1"
+  },
+  "devDependencies":{
+    "eslint": "8.11.0",
+    "jest": "27.5.1"
+  }
+}

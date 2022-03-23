@@ -1,0 +1,11 @@
+.Task-Add{
+    position: fixed;
+    right: 40px;
+    bottom: 80px;
+    height: 80px;
+    transition: 0.3s;
+}
+
+.Task-Add:hover{
+    transform: rotate(90deg) scale(0.9);
+}

@@ -1,0 +1,30 @@
+.card {
+    margin-top: 20px;
+    border: none;
+    border-radius: 15px !important;
+}
+
+.Task {
+    max-height: 400px;
+    max-width: 600px;
+}
+
+@media (min-width: 800px) {
+    body {
+        min-width: 400px;
+    }
+    .Task-Info {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .Btn-Complete {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    .Btn-Complete button {
+        width: 70;
+        height: 31px;
+        font-size: 14px;
+    }
+}
